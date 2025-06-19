@@ -53,7 +53,6 @@ kotlin {
             implementation(libs.androidx.datastore.core)
         }
         commonMain.dependencies {
-            implementation(libs.kotlinx.serialization.json)
             implementation(libs.ktor.core)
             implementation(libs.ktor.logging)
             implementation(libs.coil.network.ktor)
