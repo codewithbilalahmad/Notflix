@@ -1,0 +1,40 @@
+ CREATE TABLE FavoriteMovies (
+id INTEGER NOT NULL PRIMARY KEY,
+imdbId TEXT ,
+backdropPath TEXT NOT NULL,
+posterPath TEXT NOT NULL,
+originalLanguage TEXT,
+originalTitle TEXT NOT NULL,
+overview TEXT NOT NULL,
+popularity REAL,
+releaseDate TEXT,
+runtime INTEGER,
+status TEXT,
+tagLine TEXT,
+title TEXT NOT NULL,
+voteAverage INTEGER ,
+voteCount INTEGER,
+createdAt TEXT NOT NULL
+);
+saveFavoriteMovie:
+INSERT INTO FavoriteMovies(
+id, imdbId, backdropPath, posterPath, originalLanguage, originalTitle,
+    overview, popularity, releaseDate, runtime, status, tagLine,
+    title, voteAverage, voteCount, createdAt
+)  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+getAllFavouriteMovies:
+SELECT * FROM FavoriteMovies;
+
+getFavoriteMovie:
+SELECT  * FROM FavoriteMovies WHERE id = ?;
+
+deleteFavoriteMovie:
+DELETE FROM FavoriteMovies WHERE id= ?;
+
+deleteAllFavoruiteMovies:
+DELETE FROM FavoriteMovies;
+
+isMovieFavourite:
+SELECT EXISTS(SELECT 1 FROM FavoriteMovies WHERE id = ?);
+
